@@ -14,7 +14,7 @@ Your contributions are most welcome to complete it and keep this document update
 ## Security Headers
 <details>
 <summary>X-Frame-Options</summary>
-The `X-Frame-Options` HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a `<frame>`, `<iframe>`, `<embed>` or `<objec>`. Sites can use this to avoid click-jacking attacks, by ensuring that their content is not embedded into other sites.
+ The <code>X-Frame-Options</code> HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in as <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code> or <code>&lt;objec&gt;</code>. Sites can use this to avoid click-jacking attacks, by ensuring that their content is not embedded into other sites.
 
 ### Recommendation
 Do not allow displaying of the page in a frame.
@@ -23,7 +23,7 @@ Do not allow displaying of the page in a frame.
 
 <details>
 <summary>X-XSS-Protection</summary>
-The HTTP `X-XSS-Protection` response header is a feature of Internet Explorer, Chrome, and Safari that stops pages from loading when they detect reflected cross-site scripting (XSS) attacks.
+The HTTP <code>X-XSS-Protection</code> response header is a feature of Internet Explorer, Chrome, and Safari that stops pages from loading when they detect reflected cross-site scripting (XSS) attacks.
 
 ### Recommendation
 Enable XSS filtering and prevent browsers from rendering pages if an attack is detected.
@@ -32,8 +32,8 @@ Enable XSS filtering and prevent browsers from rendering pages if an attack is d
 
 <details>
 <summary>X-Content-Type-Options</summary>
-The `X-Content-Type-Options` response HTTP header is used by the server to prevent browsers from guessing the media type ( MIME type).
-This is known as **MIME sniffing** in which the browser guesses the correct MIME type by looking at the contents of the resource.
+The <code>X-Content-Type-Options</code> response HTTP header is used by the server to prevent browsers from guessing the media type ( MIME type).
+ This is known as <b>MIME sniffing</b> in which the browser guesses the correct MIME type by looking at the contents of the resource.
 The absence of this header might cause browsers to transform non-executable content into executable content.
 
 ### Recommendation
@@ -42,7 +42,7 @@ The absence of this header might cause browsers to transform non-executable cont
 
  <details>
 <summary>Referrer-Policy</summary>
-The `Referrer-Policy` HTTP header controls how much referrer information (sent via the Referer header) should be included with requests.
+The <code>Referrer-Policy</code> HTTP header controls how much referrer information (sent via the Referer header) should be included with requests.
 
 ### Recommendation
 Send everything to the same site but only the origin for other sites.
@@ -53,7 +53,7 @@ Send everything to the same site but only the origin for other sites.
 
 <details>
 <summary>Content-Type</summary>
-The `Content-Type` representation header is used to indicate the original media type of the resource (before any content encoding is applied for sending).
+The <code>Content-Type</code> representation header is used to indicate the original media type of the resource (before any content encoding is applied for sending).
 
 ### Recommendation
 > `Content-Type: text/html; charset=UTF-8`
@@ -64,7 +64,7 @@ The `Content-Type` representation header is used to indicate the original media 
 
 <details>
 <summary>Set-Cookie</summary>
-The `Set-Cookie` HTTP response header is used to send a cookie from the server to the user agent, so the user agent can send it back to the server later. To send multiple cookies, multiple Set-Cookie headers should be sent in the same response.
+The <code>Set-Cookie</code> HTTP response header is used to send a cookie from the server to the user agent, so the user agent can send it back to the server later. To send multiple cookies, multiple Set-Cookie headers should be sent in the same response.
 
 ### Recommendation
 > `Set-Cookie: name=value; Secure; HttpOnly; SameSite=Strict`
@@ -74,7 +74,7 @@ The `Set-Cookie` HTTP response header is used to send a cookie from the server t
 
 <details>
 <summary>Strict-Transport-Security</summary>
-The HTTP `Strict-Transport-Security` response header (often abbreviated as HSTS) lets a website tell browsers that it should only be accessed using HTTPS, instead of using HTTP.
+The HTTP <code>Strict-Transport-Security</code> response header (often abbreviated as HSTS) lets a website tell browsers that it should only be accessed using HTTPS, instead of using HTTP.
 
 ### Recommendation
 Enable HTTPS-only access for the site and sub domains.
@@ -83,7 +83,7 @@ Enable HTTPS-only access for the site and sub domains.
 
 <details>
 <summary>Expect-CT</summary>
-The `Expect-CT` header lets sites opt-in to reporting and/or enforcement of Certificate Transparency requirements, to prevent the use of misissued certificates for that site from going unnoticed.
+The <code>Expect-CT</code> header lets sites opt-in to reporting and/or enforcement of Certificate Transparency requirements, to prevent the use of misissued certificates for that site from going unnoticed.
 
 ### Recommendation
 Enforce Certificate Transparency for 24 hours.
@@ -103,7 +103,7 @@ Restrict most of the resource types to the same site and subdomains of `yourdoam
 
 <details>
 <summary>Access-Control-Allow-Origin</summary>
-The `Access-Control-Allow-Origin` response header indicates whether the response can be shared with requesting code from the given origin.
+The <code>Access-Control-Allow-Origin</code> response header indicates whether the response can be shared with requesting code from the given origin.
 
 ### Recommendation
 Use `*` or specific domain names.
@@ -112,7 +112,7 @@ Use `*` or specific domain names.
 
 <details>
 <summary>Cross-Origin-Opener-Policy</summary>
-The HTTP `Cross-Origin-Opener-Policy` (COOP) response header allows you to ensure a top-level document does not share a browsing context group with cross-origin documents.
+The HTTP <code>Cross-Origin-Opener-Policy</code> (COOP) response header allows you to ensure a top-level document does not share a browsing context group with cross-origin documents.
 
 ### Recommendation
 Isolates the browsing context exclusively to same-origin documents.
@@ -121,7 +121,7 @@ Isolates the browsing context exclusively to same-origin documents.
 
 <details>
 <summary>Cross-Origin-Resource-Policy</summary>
-The `Cross-Origin-Resource-Policy` (CORP) header allows you to control the set of origins that are empowered to include a resource. It is a robust defense against attacks like [Spectre](https://meltdownattack.com/), as it allows browsers to block a given response before it enters an attacker's process.
+The <code>Cross-Origin-Resource-Policy</code> (CORP) header allows you to control the set of origins that are empowered to include a resource. It is a robust defense against attacks like <a href="https://meltdownattack.com/">Spectre</a>, as it allows browsers to block a given response before it enters an attacker's process.
 
 ### Recommendation
 Limit current resource loading to the site and sub-domains only.
@@ -130,7 +130,7 @@ Limit current resource loading to the site and sub-domains only.
 
 <details>
 <summary>Cross-Origin-Embedder-Policy</summary>
-The HTTP `Cross-Origin-Embedder-Policy` (COEP) response header prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using [CORP](#cross-origin-resource-policy) or CORS).
+The HTTP <code>Cross-Origin-Embedder-Policy</code> (COEP) response header prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using [CORP](#cross-origin-resource-policy) or CORS).
 
 ### Recommendation
 A document can only load resources from the same origin, or resources explicitly marked as loadable from another origin.
@@ -142,7 +142,7 @@ A document can only load resources from the same origin, or resources explicitly
 
 <details>
 <summary>Server</summary>
-The `Server` header describes the software used by the origin server that handled the request — that is, the server that generated the response.
+The <code>Server</code> header describes the software used by the origin server that handled the request — that is, the server that generated the response.
 
 ### Recommendation
 Remove this header or set non-informative values.
@@ -151,7 +151,7 @@ Remove this header or set non-informative values.
 
 <details>
 <summary>X-Powered-By</summary>
-The `X-Powered-By` header describes the technologies used by the webserver. This information exposes the server to attackers. Using the information in this header, attackers can find vulnerabilities easier.
+The <code>X-Powered-By</code> header describes the technologies used by the webserver. This information exposes the server to attackers. Using the information in this header, attackers can find vulnerabilities easier.
 
 ### Recommendation
 Remove all `X-Powered-By` headers.
@@ -175,7 +175,7 @@ Disable sending this header. Review the [ASP.NET Version Disclosure](https://www
 
 <details>
 <summary>X-DNS-Prefetch-Control</summary>
-The `X-DNS-Prefetch-Control` HTTP response header controls DNS prefetching, a feature by which browsers proactively perform domain name resolution on both links that the user may choose to follow as well as URLs for items referenced by the document, including images, CSS, JavaScript, and so forth.
+The <code>X-DNS-Prefetch-Control</code> HTTP response header controls DNS prefetching, a feature by which browsers proactively perform domain name resolution on both links that the user may choose to follow as well as URLs for items referenced by the document, including images, CSS, JavaScript, and so forth.
 
 ### Recommendation
 The default behavior of browsers is to perform DNS caching which is good for most websites.
@@ -184,7 +184,7 @@ If you do not control links on your website, you might want to set `off` as a va
 
 <details>
 <summary>Public-Key-Pins ❌</summary>
-The HTTP `Public-Key-Pins` response header is used to associate a specific cryptographic public key with a certain web server to decrease the risk of MITM attacks with forged certificates.
+The HTTP <code>Public-Key-Pins</code> response header is used to associate a specific cryptographic public key with a certain web server to decrease the risk of MITM attacks with forged certificates.
 
 ### Recommendation
 This header is deprecated. Use `Expect-CT` instead.
@@ -193,7 +193,7 @@ This header is deprecated. Use `Expect-CT` instead.
 ## Adding Http Headers in Different Technologies
 <details>
 <summary>PHP</summary>
-Below sample code sets the `X-XSS-Protection` header in PHP.
+Below sample code sets the <code>X-XSS-Protection</code> header in PHP.
 
 ```php
 header("X-XSS-Protection: 1; mode=block");
@@ -202,7 +202,7 @@ header("X-XSS-Protection: 1; mode=block");
 
 <details>
 <summary>Apache</summary>
-Below `.htaccess` sample configuration sets the `X-XSS-Protection` header in Apache.
+Below <code>.htaccess</code> sample configuration sets the <code>X-XSS-Protection</code> header in Apache.
 
 ```
 <IfModule mod_headers.c>
@@ -213,7 +213,7 @@ Header set X-XSS-Protection "1; mode=block"
 
 <details>
 <summary>IIS</summary>
-Add below configurations to your `Web.config` in ISS to send the `X-XSS-Protection` header
+Add below configurations to your <code>Web.config</code> in ISS to send the <code>X-XSS-Protection</code> header
 
 ```xml
 <system.webServer>
@@ -230,7 +230,7 @@ Add below configurations to your `Web.config` in ISS to send the `X-XSS-Protecti
 
 <details>
 <summary>HAProxy</summary>
-Add the below line to your font-end, listen, or backend configurations to send the `X-XSS-Protection` header
+Add the below line to your font-end, listen, or backend configurations to send the <code>X-XSS-Protection</code> header
 
 ```
 http-response set-header X-XSS-Protection 1; mode=block
@@ -239,7 +239,7 @@ http-response set-header X-XSS-Protection 1; mode=block
 
 <details>
 <summary>Nginx</summary>
-Below sample configuration, sets the `X-XSS-Protection` header in Nginx.
+Below sample configuration, sets the <code>X-XSS-Protection</code> header in Nginx.
 
 ```
 add_header "X-XSS-Protection" "1; mode=block";
@@ -248,7 +248,7 @@ add_header "X-XSS-Protection" "1; mode=block";
 
 <details>
 <summary>Express</summary>
-You can use [helmet]() to setup HTTP headers in Express. Below code is sample for adding the `X-Frame-Options` header.
+You can use <a href="https://www.npmjs.com/package/helmet">helmet</a> to setup HTTP headers in Express. Below code is sample for adding the <code>X-Frame-Options</code> header.
 
 ```javascript
 const helmet = require('helmet');
@@ -267,7 +267,7 @@ app.use(
 The [Mozilla Observatory](https://observatory.mozilla.org/) is an online tool that you can check your website's header status.
 
 ### SmartScanner
-[SmartScanner](https://www.thesmartscanner.com/) has a dedicated [test profile](https://www.thesmartscanner.com/docs/security-tests) for testing security of HTTP headers.
+[SmartScanner](https://www.thesmartscanner.com/) is a web vulnerability scanner application that has a dedicated [test profile](https://www.thesmartscanner.com/docs/security-tests) for testing security of HTTP headers.
 Online tools usually test the homepage of the given address. But SmartScanner scans the whole website. So, you can make sure all of your web pages have the right HTTP Headers in place.
 
 ## References

@@ -58,7 +58,7 @@ The <code>Content-Type</code> representation header is used to indicate the orig
 ### Recommendation
 > `Content-Type: text/html; charset=UTF-8`
 
-- *NOTE:* the `charset` attribute is necessary to prevent XSS in HTML pages
+- *NOTE:* the `charset` attribute is necessary to prevent XSS in **HTML** pages
 - *NOTE*: the `text/html` can be any of the possible [MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 </details>
 
@@ -98,7 +98,7 @@ Content Security Policy (CSP) is an added layer of security that helps to detect
 Restrict most of the resource types to the same site and subdomains of `yourdoamin.com`
 > `Content-Security-Policy: default-src 'self' *.yourdomain.com; block-all-mixed-content; font-src 'self' https: data:; img-src 'self' data: blob:; object-src 'none'; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;`
 
-- *WARNING*: Inline `script` elements and inline script event handlers like `onload` will stop working with the above header. This is required to neutralize XSS attacks.
+- *WARNING*: Inline `script` elements and inline script event handlers like `onload` will stop working with the above header. But this is required to neutralize XSS attacks.
 </details>
 
 <details>
